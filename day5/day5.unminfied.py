@@ -8,12 +8,9 @@ moved_crates_9000 = final_crates.copy()
 moved_crates_9001 = final_crates.copy()
 for command in commands_list:
     moved_items = (moved_crates_9000[command[1] - 1][0:command[0]])[::-1]
-    print(moved_items)
     moved_crates_9000[command[1] - 1] = moved_crates_9000[command[1] - 1][command[0]:]
     moved_crates_9000[command[2] - 1] = moved_items + moved_crates_9000[command[2] - 1]
-for command in commands_list:
     moved_items = moved_crates_9001[command[1] - 1][0:command[0]]
-    print(moved_items)
     moved_crates_9001[command[1] - 1] = moved_crates_9001[command[1] - 1][command[0]:]
     moved_crates_9001[command[2] - 1] = moved_items + moved_crates_9001[command[2] - 1]
 print(''.join([elem[0] for elem in moved_crates_9000]), ''.join([elem[0] for elem in moved_crates_9001]))
